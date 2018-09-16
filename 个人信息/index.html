@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="img/tt.png" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>个人信息页面</title>
+		
+	</head>
+	<body>
+		<article>
+			<h2>请填写个人信息</h2>
+			<fieldset>
+				<legend>基本信息</legend>
+				<form id="putform" action="#" method="get">
+					姓名<input type="text" name="txt" required="required" placeholder="请输入姓名" autofocus="autofocus" /><span>*</span><br />
+					年龄<input type="number" name="num" />
+				</from>
+			</fieldset>
+			<fieldset>
+				<legend>你想在哪里收到邮件？</legend>
+					邮箱<input onkeyup="fun()" form="putform" type="search" name="mail" id="mail" required="required" placeholder="请输入邮箱" autocomplete="on" list="mails" result/><span>*</span>
+					<datalist id="mails">
+						<option class="op">@qq.com</option>
+						<option class="op">@163.com</option>
+						<option class="op">@gmail.com</option>
+						<option class="op">@yahoo.com</option>
+						<option class="op">@126.com</option>
+					</datalist>
+			</fieldset>
+			<fieldset>
+				<legend>收入情况</legend>
+					月收入<input form="putform" type="search" name="money" list="moneys" autocomplete="on" />
+					      <datalist id="moneys">
+					      	<option>10k+</option>
+					      	<option>20k+</option>
+					      	<option>40k+</option>
+					      	<option>60k+</option>
+					      	<option>80k+</option>
+					      	<option>100k+</option>
+					      </datalist>
+					<br />
+				银行卡<input form="putform" type="number" name="nums" />
+				有效期<input form="putform" type="date" name="dates" />
+			</fieldset>
+			<fieldset>
+				<legend>选取提交文件</legend>
+					文件<input form="putform" type="file" name="files" multiple="multiple"/>
+			</fieldset>
+			<button>提交</button>
+		</article>
+	</body>
+	<script>
+			var opt=document.getElementsByClassName("op");
+			var len=opt.length;
+			function fun(){
+				var mail=document.getElementById("mail");
+				var mailtxt=mail.value;
+				
+				var flag="";
+				if(mailtxt.indexOf("@")>0){
+					mailtxt=mailtxt.substring(0,mailtxt.indexOf("@"));
+					flag=mailtxt.substring(mailtxt.indexOf("@")-1);
+					console.log(flag);
+				}
+				var val="";
+				for(var i=0;i<len;i++){
+					val=opt[i].text;
+					val=val.substring(val.indexOf("@"));
+					opt[i].text=mailtxt+val;
+				}
+				if(flag!=""){
+					var reg=new RegExp(flag,"i");
+					for(var i=0;i<len;i++){
+						if(reg.test(opt[i].text)){
+							opt[i].style.display="block";
+						}else{
+							opt[i].style.display="none";
+						}
+					}
+				}
+			}
+			
+			
+		</script>
+</html>

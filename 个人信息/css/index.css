@@ -1,0 +1,19 @@
+
+article{
+	height: 600px;
+	width: 500px;
+	/*background-color: rosybrown;*/
+	margin: auto;
+}
+legend{
+	color: red;
+}
+input{
+	margin-top: 5px;
+}
+button{
+	margin-top: 10px;
+}
+span{
+	color: red;
+}
