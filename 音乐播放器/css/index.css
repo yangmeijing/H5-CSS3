@@ -1,0 +1,27 @@
+h2{
+	width: 300px;
+	background-color: cadetblue;
+	text-align: center;
+}
+article{
+	height: 450px;
+	width: 300px;
+	/*background-color: darkgoldenrod;*/
+}
+section{
+	height: 30px;
+	width: 300px;
+	/*background-color: greenyellow;*/
+}
+#playaudio1,#playaudio2{
+	float: right;
+}
+#stopaudio1,#stopaudio2{
+	float: right;
+	display: none;
+}
+footer{
+	width: 300px;
+	background-color: sandybrown;
+}
+

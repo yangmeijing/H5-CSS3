@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="img/tt.png" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<title>音乐播放器</title>
+		<script>
+			function play(i){
+				var playaudio=document.getElementById("playaudio"+i);
+				var stopaudio=document.getElementById("stopaudio"+i);
+				var music=document.getElementById("music"+i);
+				music.play();
+				playaudio.style.display="none";
+				stopaudio.style.display="block";
+				music.controls="controls";
+			}
+			function stop(i){
+				var playaudio=document.getElementById("playaudio"+i);
+				var stopaudio=document.getElementById("stopaudio"+i);
+				var music=document.getElementById("music"+i);
+				music.pause();
+				playaudio.style.display="block";
+				stopaudio.style.display="none";
+			}
+			function change(){
+				console.log("11");
+			}
+		</script>
+	</head>
+	<body>
+		<h2>本地音乐</h2>
+		<article>
+			<section>
+				感谢你曾经来过
+				<input type="button" value="播放" id="playaudio1"  onclick = "play(1)" />
+				<input type="button" value="暂停" id="stopaudio1"  onclick = "stop(1)" />
+			</section>
+			<section>
+				烈酒
+				<input type="button" value="播放" id="playaudio2"  onclick = "play(2)" />
+				<input type="button" value="暂停" id="stopaudio2"  onclick = "stop(2)" />
+			</section>
+		</article>
+		<footer>
+				<audio src="img/感谢你曾来过 .mp3" id="music1">
+				您的浏览器不支持Audio标签
+				</audio>
+				<audio src="img/烈酒.mp3" id="music2">
+					您的浏览器不支持Audio标签
+				</audio>
+		</footer>
+	</body>
+</html>
