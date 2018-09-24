@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="img/tt.png" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>页面换肤</title>
+	</head>
+	<body>
+		<fieldset>
+			<legend>页面换肤</legend>
+			<div id="col">
+				<span id="red"></span>
+				<span id="purple"></span>
+				<span id="blue"></span>
+				<span id="yellow"></span>
+				<span id="green"></span>
+			</div>
+			<div id="tex">
+				LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，在下次打开浏览器访问网站时仍然可以继续使用。
+			</div>
+		</fieldset>
+	</body>
+	<script>
+		//top值设置成负的向上移动
+		var color;
+		var tex=document.getElementById("tex");
+		var span1=document.getElementById("red");
+		var span2=document.getElementById("purple");
+		var span3=document.getElementById("blue");
+		var span4=document.getElementById("yellow");
+		var span5=document.getElementById("green");
+		
+		window.onload=function(){
+			if(localStorage.length==0){
+				localStorage.setItem("red","red");
+				tex.style.backgroundColor=localStorage.getItem("red");
+				ttop();
+				span1.style.marginTop="5px";
+			}else{
+				tex.style.backgroundColor=localStorage.getItem(localStorage.key(0));
+			}
+		}
+		
+		
+		
+		function ttop(){
+//			console.log(localStorage);
+			span1.style.marginTop="10px";
+			span2.style.marginTop="10px";
+			span3.style.marginTop="10px";
+			span4.style.marginTop="10px";
+			span5.style.marginTop="10px";
+		}
+			
+		span1.onclick=function(){
+			localStorage.clear();
+			localStorage.setItem("red","red");
+			tex.style.backgroundColor=localStorage.getItem("red");
+			ttop();
+			span1.style.marginTop="5px";
+		}
+		span2.onclick=function(){
+			localStorage.clear();
+			localStorage.setItem("purple","purple");
+			tex.style.backgroundColor=localStorage.getItem("purple");
+			ttop();
+			span2.style.marginTop="5px";
+		}
+		span3.onclick=function(){
+			localStorage.clear();
+			localStorage.setItem("blue","blue");
+			tex.style.backgroundColor=localStorage.getItem("blue");
+			ttop();
+			span3.style.marginTop="5px";
+		}
+		span4.onclick=function(){
+			localStorage.clear();
+			localStorage.setItem("yellow","yellow");
+			tex.style.backgroundColor=localStorage.getItem("yellow");
+			ttop();
+			span4.style.marginTop="5px";
+		}
+		span5.onclick=function(){
+			localStorage.clear();
+			localStorage.setItem("green","green");
+			tex.style.backgroundColor=localStorage.getItem("green");
+			ttop();
+			span5.style.marginTop="5px";
+		}
+		console.log(color);
+	</script>
+</html>

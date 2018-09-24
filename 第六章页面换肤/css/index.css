@@ -1,0 +1,40 @@
+legend{
+	color: red;
+	font-size: x-large;
+	font-weight: 500;
+}
+span{
+	height: 20px;
+	width: 20px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	/*position: absolute;*/
+}
+#col{
+	height: 40px;
+	width: 800px;
+	border:1px solid #6495ED;
+	margin: 10px;
+}
+#tex{
+	height: 100px;
+	width: 800px;
+	border:1px solid #6495ED;
+	margin: 10px;
+}
+#red{
+	background-color: red;
+}
+#blue{
+	background-color: cornflowerblue;
+}
+#green{
+	background-color: greenyellow;
+}
+#purple{
+	background-color: purple;
+}
+#yellow{
+	background-color: yellow;
+}
